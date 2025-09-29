@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Sidi Scents</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+      .font-cinzel { font-family: 'Cinzel', serif; }
+      .font-montserrat { font-family: 'Montserrat', sans-serif; }
+      .product-card:hover .product-overlay { opacity: 1; }
+    </style>
+</head>
+<body class="bg-white font-montserrat text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="font-cinzel text-2xl font-bold text-sidi-purple">SIDI SCENTS</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-sidi-gold transition">Home</a>
+                <a href="shop.html" class="text-sidi-purple font-medium">Shop</a>
+                <a href="#" class="text-gray-600 hover:text-sidi-gold transition">Collections</a>
+                <a href="#" class="text-gray-600 hover:text-sidi-gold transition">About</a>
+                <a href="#" class="text-gray-600 hover:text-sidi-gold transition">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#"><i data-feather="search" class="text-gray-600 hover:text-sidi-gold"></i></a>
+                <a href="#"><i data-feather="user" class="text-gray-600 hover:text-sidi-gold"></i></a>
+                <a href="#"><i data-feather="shopping-bag" class="text-gray-600 hover:text-sidi-gold"></i></a>
+                <button class="md:hidden">
+                    <i data-feather="menu" class="text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <section class="pt-32 pb-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h1 class="font-cinzel text-4xl text-sidi-purple mb-4">Our Fragrance Collection</h1>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <p class="text-gray-600 mb-6 md:mb-0">Discover our exquisite range of perfumes crafted with the finest ingredients from Kenya and beyond.</p>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <select class="block appearance-none bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded-sm leading-tight focus:outline-none focus:border-sidi-purple">
+                            <option>Sort by</option>
+                            <option>Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <i data-feather="chevron-down" class="w-4"></i>
+                        </div>
+                    </div>
+                    <button class="md:hidden bg-sidi-purple text-white p-2 rounded-sm">
+                        <i data-feather="filter" class="w-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Content -->
+    <section class="pb-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row">
+                <!-- Filters -->
+                <div class="hidden md:block md:w-1/4 md:pr-8">
+                    <div class="mb-8">
+                        <h3 class="font-cinzel text-lg text-sidi-purple mb-4">Categories</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="women" class="mr-2">
+                                <label for="women" class="text-gray-600">Women's Fragrances</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="men" class="mr-2">
+                                <label for="men" class="text-gray-600">Men's Fragrances</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="unisex" class="mr-2" checked>
+                                <label for="unisex" class="text-gray-600">Unisex</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="gift" class="mr-2">
+                                <label for="gift" class="text-gray-600">Gift Sets</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="font-cinzel text-lg text-sidi-purple mb-4">Fragrance Type</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="floral" class="mr-2">
+                                <label for="floral" class="text-gray-600">Floral</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="woody" class="mr-2" checked>
+                                <label for="woody" class="text-gray-600">Woody</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="citrus" class="mr-2">
+                                <label for="citrus" class="text-gray-600">Citrus</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="oriental" class="mr-2">
+                                <label for="oriental" class="text-gray-600">Oriental</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="fresh" class="mr-2">
+                                <label for="fresh" class="text-gray-600">Fresh</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="spicy" class="mr-2">
+                                <label for="spicy" class="text-gray-600">Spicy</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="font-cinzel text-lg text-sidi-purple mb-4">Price Range</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-2">
+                                <input type="text" placeholder="Min" class="w-full border border-gray-300 py-1 px-2 rounded-sm">
+                                <span>-</span>
+                                <input type="text" placeholder="Max" class="w-full border border-gray-300 py-1 px-2 rounded-sm">
+                            </div>
+                            <button class="w-full bg-sidi-gold hover:bg-yellow-600 text-white py-2 rounded-sm">Apply</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div class="md:w-3/4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Product 1 -->
+                        <div class="product-card group relative overflow-hidden">
+                            <div class="relative overflow-hidden h-80">
+                                <img src="http://static.photos/cosmetic/640x360/5" class="w-full h-full object-cover" alt="Amber Dreams">
+                                <div class="product-overlay absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition">
+                                    <button class="bg-sidi-gold text-white px-6 py-2 rounded-sm font-medium">Quick View</button>
+                                </div>
+                                <div class="absolute top-4 left-4 bg-sidi-purple text-white text-xs font-medium px-2 py-1">NEW</div>
+                            </div>
+                            <div class="mt-4">
+                                <h3 class="font-cinzel text-lg">Amber Dreams</h3>
+                                <p class="text-gray-600">Oriental | Woody</p>
+                                <p class="text-sidi-gold font-medium mt-2">KSh 4,800</p>
+                                <button class="mt-3 w-full border border-sidi-purple text-sidi-purple py-2 hover:bg-sidi-purple hover:text-white transition">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card group relative overflow-hidden">
+                            <div class="relative overflow-hidden h-80">
+                                <img src="http://static.photos/cosmetic/640x360/6" class="w-full h-full object-cover" alt="Wild Orchid">
+                                <div class="product-overlay absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition">
+                                    <button class="bg-sidi-gold text-white px-6 py-2 rounded-sm font-medium">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <h3 class="font-cinzel text-lg">Wild Orchid</h3>
+                                <p class="text-gray-600">Floral | Sweet</p>
+                                <p class="text-sidi-gold font-medium mt-2">KSh 4,200</p>
+                                <button class="mt-3 w-full border border-sidi-purple text-sidi-purple py-2 hover:bg-sidi-purple hover:text-white transition">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card group relative overflow-hidden">
+                            <div class="relative overflow-hidden h-80">
+                                <img src="http://static.photos/cosmetic/640x360/7" class="w-full h-full object-cover" alt="Musk Legend">
+                                <div class="product-overlay absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition">
+                                    <button class="bg-sidi-gold text-white px-6 py-2 rounded-sm font-medium">Quick View</button>
+                                </div>
+                                <div class="absolute top-4 left-4 bg-red-500 text-white text-xs font-medium px-2 py-1">BESTSELLER</div>
+                            </div>
+                            <div class="mt-4">
+                                <h3 class="font-cinzel text-lg">Musk Legend</h3>
+                                <p class="text-gray-600">Woody | Musky</p>
+                                <p class="text-sidi-gold font-medium mt-2">KSh 5,500</p>
+                                <button class="mt-3 w-full border border-sidi-purple text-sidi-purple py-2 hover:bg-sidi-purple hover:text-white transition">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="product-card group relative overflow-hidden">
+                            <div class="relative overflow-hidden h-80">
+                                <img src="http://static.photos/cosmetic/640x360/8" class="w-full h-full object-cover" alt="Citrus Zest">
+                                <div class="product-overlay absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition">
+                                    <button class="bg-sidi-gold text-white px-6 py-2 rounded-sm font-medium">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <h3 class="font-cinzel text-lg">Citrus Zest</h3>
+                                <p class="text-gray-600">Fresh | Citrus</p>
+                                <p class="text-sidi-gold font-medium mt-2">KSh 3,900</p>
+                                <button class="mt-3 w-full border border-sidi-purple text-sidi-purple py-2 hover:bg-sidi-purple hover:text-white transition">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="product-card group relative overflow-hidden">
+                            <div class="relative overflow-hidden h-80">
+                                <img src="http://static.photos/cosmetic/640x360/9" class="w-full h-full object-cover" alt="Vanilla Sky">
+                                <div class="product-overlay absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition">
+                                    <button class="bg-sidi-gold text-white px-6 py-2 rounded-sm font-medium">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <h3 class="font-cinzel text-lg">Vanilla Sky</h3>
+                                <p class="text-gray-600">Sweet | Gourmand</p>
+                                <p class="text-sidi-gold font-medium mt-2">KSh 4,600</p>
+                                <button class="mt-3 w-full border border-sidi-purple text-sidi-purple py-2 hover:bg-sidi-purple hover:text-white transition">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="product-card group relative overflow-hidden">
+                            <div class="relative overflow-hidden h-80">
+                                <img src="http://static.photos/cosmetic/640x360/10" class="w-full h-full object-cover" alt="Oud Royal">
+                                <div class="product-overlay absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition">
+                                    <button class="bg-sidi-gold text-white px-6 py-2 rounded-sm font-medium">Quick View</button>
+                                </div>
+                                <div class="absolute top-4 left-4 bg-sidi-gold text-white text-xs font-medium px-2 py-1">LIMITED</div>
+                            </div>
+                            <div class="mt-4">
+                                <h3 class="font-cinzel text-lg">Oud Royal</h3>
+                                <p class="text-gray-600">Woody | Spicy</p>
+                                <p class="text-sidi-gold font-medium mt-2">KSh 6,200</p>
+                                <button class="mt-3 w-full border border-sidi-purple text-sidi-purple py-2 hover:bg-sidi-purple hover:text-white transition">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-16 flex justify-center">
+                        <nav class="flex items-center space-x-2">
+                            <a href="#" class="px-4 py-2 border border-gray-300 rounded-sm text-gray-600 hover:bg-sidi-purple hover:text-white transition">&laquo;</a>
+                            <a href="#" class="px-4 py-2 border border-gray-300 rounded-sm bg-sidi-purple text-white">1</a>
+                            <a href="#" class="px-4 py-2 border border-gray-300 rounded-sm text-gray-600 hover:bg-sidi-purple hover:text-white transition">2</a>
+                            <a href="#" class="px-4 py-2 border border-gray-300 rounded-sm text-gray-600 hover:bg-sidi-purple hover:text-white transition">3</a>
+                            <a href="#" class="px-4 py-2 border border-gray-300 rounded-sm text-gray-600 hover:bg-sidi-purple hover:text-white transition">&raquo;</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <h3 class="font-cinzel text-xl mb-4">SIDI SCENTS</h3>
+                    <p class="text-gray-400 mb-4">Kenya's premier luxury fragrance house crafting scents that captivate and inspire.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"><i data-feather="instagram" class="text-gray-400 hover:text-sidi-gold"></i></a>
+                        <a href="#"><i data-feather="facebook" class="text-gray-400 hover:text-sidi-gold"></i></a>
+                        <a href="#"><i data-feather="twitter" class="text-gray-400 hover:text-sidi-gold"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-sidi-gold transition">All Perfumes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sidi-gold transition">New Arrivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sidi-gold transition">Best Sellers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sidi-gold transition">Gift Sets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Information</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-sidi-gold transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sidi-gold transition">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sidi-gold transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sidi-gold transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Nairobi, Kenya</li>
+                        <li class="text-gray-400">info@sidi-scents.com</li>
+                        <li class="text-gray-400">+254 700 123 456</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Sidi Scents. All rights reserved. Luxury Fragrances from Kenya.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
